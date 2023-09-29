@@ -21,8 +21,7 @@ const IndexPage = () => {
     </div>
 </section>
 
-
-        <section class="links">
+    <section class="links">
           <a href="#">GitHub</a>
           <a href="#">Projects</a>
           <a href="mailto:theolfactive@gmail.com">Contact</a>
