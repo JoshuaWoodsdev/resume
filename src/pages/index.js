@@ -4,6 +4,16 @@ import Projects from "../components/projects";
 import Footer from "../components/footer";
 
 const IndexPage = () => {
+const projectData = [
+  { title: "The Olfactive", description: "Site about fragrance" },
+  { title: "Project 1", description: "Description 1" },
+  { title: "Project 1", description: "Description 1" },
+  { title: "Project 1", description: "Description 1" },
+]
+
+
+
+
   return (
     <>
       <header>
@@ -25,10 +35,9 @@ const IndexPage = () => {
         </nav>
 
         <div className="project-cards">
-          <Projects />
-          <Projects />
-          <Projects />
-          <Projects />
+               {projectData.map((data, index) => (
+                <Projects key={index} title={data.title} description={data.description} />
+               ))}
         </div>
 
         <section className="skills">
