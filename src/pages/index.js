@@ -1,62 +1,74 @@
-import * as React from "react"
+
+import * as React from "react";
 import '../styles/styles.css';
 import Projects from "../components/projects";
 import Footer from "../components/footer";
+import profileImg from '../images/holder.jpg';
+import NavBar from "../components/navbar";
+
+
 
 const IndexPage = () => {
-const projectData = [
-  { title: "The Olfactive", description: "Site about fragrance" },
-  { title: "Project 1", description: "Description 1" },
-  { title: "Project 1", description: "Description 1" },
-  { title: "Project 1", description: "Description 1" },
-]
-
-
-
-
+  const projectData = [
+    {
+      title: "The Olfactive",
+      description: "Site about fragrance",
+      src: profileImg,  // Add this
+      link: "https://theolfactive.com"
+    },
+    {
+      title: "Remota",
+      description: "Job Board",
+      src: profileImg,  // Add this
+      link: "https://theolfactive.com"
+    },
+    {
+      title: "The Olfactive",
+      description: "Site about fragrance",
+      src: profileImg,  // Add this
+      link: "https://theolfactive.com"
+    },
+   
+  ]
   return (
-    <>
-      <header>
-        <h2><span className="highlight">Joshua Woods</span></h2>
+    <>     
+      <NavBar/>
+      <header className="profile-header">
+  
+        <section className="about">
+          <h1>Joshua Woods</h1>
+          <p>Web Development | UX/UI</p>
+          <p>
+            I'm a multi-talented web developer, UX/UI designer, and creative professional
+            specializing in human-centered projects. I create engaging digital experiences
+            that prioritize user needs and desires, combining technical expertise with creative problem-solving.
+            My goal is to deliver intuitive interfaces and visually captivating designs that make a lasting impact.
+          </p>
+        </section>
+        <img src={profileImg} alt="Joshua Woods" className="profile-image" />
       </header>
 
       <main>
-        <section className="about">
-          <div className="about-text">
-            <p>Dedicated front-end developer with an extensive background in creating responsive and user-centric web applications. I combine a deep understanding of design patterns with technical expertise to craft seamless web experiences. Proficient in various web technologies and grounded in Linux system administration, I deliver both innovative and robust solutions.
-            </p>
+
+        <section className="podcast">
+          <h2>PODCAST featuring interviews with:</h2>
+          {/* Your podcast content here */}
+        </section>
+
+        <section className="project-section">
+          <h2>My Projects</h2>
+          <div className="project-cards">
+            {projectData.map((data, index) => (
+              <Projects key={index} title={data.title} description={data.description} src={data.src} />
+            ))}
           </div>
         </section>
 
-        <nav className="links">
-          <a href="#">GitHub</a>
-          <a href="#">Projects</a>
-          <a href="mailto:theolfactive@gmail.com">Contact</a>
-        </nav>
-
-        <div className="project-cards">
-               {projectData.map((data, index) => (
-                <Projects key={index} title={data.title} description={data.description} />
-               ))}
-        </div>
-
-        <section className="skills">
-          <h2>Skills</h2>
-          <ul>
-            <li>Front-End Development: Vue.js/Nuxt.js, Expo, React</li>
-            <li>UI/UX Design: Figma, AdobeXD</li>
-            <li>Content Management Systems: Sanity.io, DatoCMS</li>
-            <li>Development: Expo.js, Gatsby.js, Git, HTML5, CSS3</li>
-          </ul>
+        <section className="work-together">
+          <h2>Lets work together</h2>
+          {/* Your collaboration content or contact form here */}
         </section>
-        <section className="experience">
-          <h2>Experience</h2>
 
-        </section>
-        <section className="education">
-          <h2>Education</h2>
-          <p>Devslopes, TeamTreeHouse</p>
-        </section>
         <Footer />
       </main>
     </>

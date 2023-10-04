@@ -1,19 +1,15 @@
 import React from "react";
 
-const Projects = ({title, description})=> {
+const Projects = ({title, description, src}) => {
     return (
-            <section className="projects">
-                <div className="project-card">
-                    <img src="/path/to/your/image1.jpg" alt="" />
-                    <h3></h3>
-                      <p>{title}</p>
-                      <p>{description}</p>
-                    <a href="https://link-to-project-1.com" target="_blank" rel="noopener noreferrer">View Project</a>
-                </div>
-            </section>
-    )
-};
-
-
+        <div className="projects">
+            <div className="project-card">
+                <img src={src} alt={title} className="project-image" />
+                <p>{title}</p>
+                <p>{description}</p>
+            </div>
+        </div>
+    );
+}
 
 export default Projects;
